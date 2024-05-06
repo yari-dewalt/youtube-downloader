@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>YouTube Downloader</title>
+      <script type="text/javascript" src="/eel.js"></script>
+      <script type="module" src="/main.js" defer></script>
+      <link rel="stylesheet" href="/style.css"></link>
+    </head>
+    <body>
+      <div id="main">
+        <div class="modal_background" id="help_modal_background">
+          <div id="help_modal" class="modal">
+            <h1 id="help_modal_header">Here's how it works</h1>
+            <ol id="help_steps">
+              <li><span class="help_step_bold">Enter a YouTube Link:</span> Copy and paste the link to a YouTube channel, playlist, or specific video you want to download.</li>
+              <li><span class="help_step_bold">Choose Download Options:</span> Select the format for the downloaded video.</li>
+              <li><span class="help_step_bold">Start Download:</span> Click the "Download" button to begin the download process. (You can change the download location by clicking the file icon.)</li>
+              <li><span class="help_step_bold">Monitor Progress:</span> Keep track of the download progress in the queue.</li>
+              <li><span class="help_step_bold">Access Downloaded Videos:</span> Once the download is complete, access your downloaded videos in the specified location on your device.</li>
+            </ol>
+            <h2>Extra Info</h2>
+            <p>Fetching or downloading videos/playlists may behave unexpectedly due to them being either: not public, age restricted, etc. You can sign in to your YouTube account in the settings to help solve these issues.</p>
+            <div class="github_profile">
+            <a href="https://github.com/yari-dewalt" target="_blank">
+              <img class="github_icon" src="./images/github.svg"></img>
+            </a>
+              <a href="https://github.com/yari-dewalt" target="_blank"class="github_account_name">yari-dewalt</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal_background" id="settings_modal_background">
+          <div id="settings_modal" class="modal">
+            <h1 id="settings_modal_header">Settings</h1>
+            <div class="visual_mode_area">
+              <h3>Visual mode: <span id="visual_mode"></span></h3>
+              <div class="visual_mode_buttons">
+                <button id="light_mode_button" class="visual_mode_button">
+                  <img id="light_mode_icon" class="visual_mode_icon" src="./images/lightMode.svg"></img>
+                </button>
+                <button id="dark_mode_button" class="visual_mode_button">
+                  <img id="dark_mode_icon" class="visual_mode_icon" src="./images/darkMode.svg"></img>
+                </button>
+              </div>
+            </div>
+            <div id="account_area">
+              <h3>YouTube Account:</h3>
+              <div id="unlinked_account">
+                <div id="verify_area">
+                  <h2 id="verify_code"></h2>
+                  <button id="verify_button">Verify</button>
+                </div>
+                <a id="verify_link" href="https://www.google.com/device" target="_blank">https://www.google.com/device</a>
+              </div>
+              <div id="account_status">
+                <img class="account_status_icon" src="./images/cancel_circle.svg"></img>
+                <p id="account_status_text">Account not linked.</p>
+              </div>
+              <button id="unlink_account">Unlink account</button>
+            </div>
+          </div>
+        </div>
+        <header id="header">
+          <div id="input_area">
+            <form id="input_form">
+              <input id="input_link" type="text" placeholder="Insert channel link"></input>
+            </form>
+            <div id="input_choice">
+              <div id="input_choice_button">
+                <button id="input_choice_text">Channel</button>
+                <div id="separator"></div>
+                <button id="input_choice_expand">
+                  <img id="input_choice_expand_icon" src="./images/expand.svg"></img>
+                </button>
+              </div>
+              <div id="input_choice_list">
+                <button class="input_choice_item selected" id="input_choice_channel">Channel</button>
+                <button class="input_choice_item" id="input_choice_video">Video</button>
+                <button class="input_choice_item" id="input_choice_playlist">Playlist</button>
+              </div>
+            </div>
+          </div>
+          <button id="help_button">
+            <img id="help_img" src="./images/help.svg"></img>
+          </button>
+          <button id="settings_button">
+            <img id="settings_img" src="./images/settings.svg"></img>
+          </button>
+        </header>
+        <div id="channel_content" class="content">
+          <div id="channel">
+            <a id="channel_image_link" class="channel_link" target="_blank">
+              <img id="channel_image" src=""></img>
+            </a>
+            <div id="channel_info">
+              <a id="channel_name" target="_blank"></a>
+              <p id="channel_header"><span id="num_subscribers"></span> • <span id="channel_videos_length"></span></p>
+              <p id="channel_description"></p>
+            </div>
+          </div>
+          <div id="playlists_container">
+            <div id="playlists_header">
+              <h2 id="playlists_text">Playlists</h2>
+              <img id="playlists_expand_icon" src="./images/expand.svg"></img>
+            </div>
+            <ul id="playlists_list"></ul>
+          </div>
+          <div id="videos_container">
+            <div id="videos_header">
+              <h2 id="videos_text">Recent Videos</h2>
+              <img id="videos_expand_icon" src="./images/expand.svg"></img>
+            </div>
+            <ul id="videos_list"></ul>
+          </div>
+        </div>
+        <div id="video_content" class="content">
+          <div id="single_video" class="video_largeview">
+          </div>
+        </div>
+        <div id="playlist_content" class="content">
+          <div id="single_playlist" class="playlist_largeview">
+          </div>
+          <ol id="playlist_videos">
+          </ol>
+        </div>
+        <footer id="footer">
+          <div id="file_info">
+            <button id="file_dialog_button">
+              <img id="file_dialog_icon" src="./images/folder.svg"></img>
+            </button>
+            <p id="file_path"></p>
+          </div>
+          <div id="download_info">
+            <div id="download_progress">
+              <div id="download_bar">
+                <p id="percentage"></p>
+                <div id="progress_bar"></div>
+              </div>
+              <p id="download_amount_tracker"><span id="downloaded_amount"></span> / <span id="download_total_amount"></span></p>
+            </div>
+          </div>
+        <div id="download_queue_area">
+          <div id="currently_downloading">
+            <p id="currently_downloading_text">Downloading</p>
+            <p id="currently_downloading_video_title"></p>
+          </div>
+          <div id="download_queue_button">
+            <img id="download_queue_image" src="./images/download.svg"></img>
+            <div id="download_queue">
+              <div id="download_queue_header">
+                <h2 id="download_queue_header_text">Download Queue</h2>
+              </div>
+              <div id="download_queue_container">
+              </div>
+            </div>
+          </div>
+        </div>
+        </footer>
+      </div>
+    </body>
+</html>
