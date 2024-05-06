@@ -19,11 +19,10 @@
 <li>Customizable settings</li>
 </ul>
 
-<h2>Quick start</h2>
+<h2>Installation</h2>
 <p>YouTube Downloader is local app meant to be run from a single executable. However, if one wishes they can clone the repository and run the code locally (this is <b>not</b> recommended as modifications to PyTube were required to be made to fix some issues, and an individual's experience may not work as expected if those same issues aren't fixed locally).</p>
-<h3>Installation</h3>
 <h4>Local App Download</h4>
-<p>YouTube downloader can be downloaded <a href="https://www.google.com">here</a>. Once downloaded, unzip the directory into your preferred location. The app can then be launched by navigating into the directory and running <b>YouTube Downloader.exe</b></p>
+<p>YouTube downloader can be downloaded <a href="https://github.com/yari-dewalt/youtube-downloader/releases">here</a>. Once downloaded, unzip the directory into your preferred location. The app can then be launched by navigating into the directory and running <b>YouTube Downloader.exe</b></p>
 <h4>GitHub</h4>
 <ol>
 <li>Clone the repository: <code>git clone https://github.com/yari-dewalt/youtube-downloader.git</code></li>
