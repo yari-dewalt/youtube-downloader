@@ -337,7 +337,6 @@ img {
 .video_title {
   overflow: hidden;
   background-color: transparent;
-  white-space: nowrap;
 }
 
 .video_thumbnail {
