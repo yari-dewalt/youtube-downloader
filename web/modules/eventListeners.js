@@ -4,9 +4,9 @@ import { updateFilePath } from "./download.js";
 
 // Function to define and initialize eventListeners for the appropriate HTML elements.
 export function initListeners() {
-  //window.addEventListener("contextmenu", function (e) {
-    //e.preventDefault();
-  //});
+  window.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
 
   let inputForm = document.getElementById("input_form");
   inputForm.addEventListener("submit", function(e) {
