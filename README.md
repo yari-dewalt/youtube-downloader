@@ -40,3 +40,14 @@ macOS/Linux: <code>source venv/bin/activate</code>
 <p><b>Q. Why do I not see some videos/playlists?</b><br>A- Only items that are publicly available are able to be fetched. Furthermore, some media may be age restricted or geographically locked. This can be solved by linking your YouTube account in the settings.</br></p>
 <p><b>Q. Why am I getting an error when inputting a channel/video/playlist link?</b><br>A- This may be due to an incorrect link. Double check that the link is correct. It might also be because you don't have access to that specific piece of media (i.e. age restriction and/or not being available in your country). Try linking your YouTube account in the settings to solve this.</br></p>
 <p><b>Q. Why am I getting an error when downloading a video/playlist?</b><br>A- If you are able to view and queue a download for a video/playlist and it results in an error, this is most likely due to an age restriction or geographical restriction. Linking your YouTube account in the settings can help solve this. This can also help due to a bad internet connection. Try making sure that your connection is good and restart the app if issues continue.</br></p>
+
+<h2>Screenshots</h2>
+<div align="center">
+<img src="./images/screenshot1.png"</img>
+</div>
+<div align="center">
+<img src="./images/screenshot2.png"</img>
+</div>
+<div align="center">
+<img src="./images/screenshot3.png"</img>
+</div>
